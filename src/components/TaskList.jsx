@@ -20,9 +20,10 @@ function TaskList({ tasks, onDelete, onToggle, onEdit}) {
                         description={task.description}
                         priority={task.priority}
                         dueDate={task.dueDate}
+                        time={task.time}
                         completed={task.completed}
-                        onDelete={()=> onDelete(task.id)}
-                        onToggle={()=> onToggle(task.id)}
+                        onDelete={() => onDelete(task.id)}
+                        onToggle={() => onToggle(task.id)}
                         onEdit={onEdit}
                         id={task.id}
                         onOpenModal={() => setTaskSelezionata(task)}

@@ -3,17 +3,18 @@ import PriorityBadge from './PriorityBadge'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-function TaskCard({ title, description, priority, dueDate, completed, onDelete, onToggle, onEdit, id, onOpenModal}) {
+function TaskCard({ title, description, priority, dueDate, time, completed, onDelete, onToggle, onEdit, id, onOpenModal}) {
     const { t } = useTranslation()
     const [isEditing, setIsEditing] = useState(false)
     const [nuovoTitolo, setNuovoTitolo] = useState(title)
     const [nuovaDescrizione, setNuovaDescrizione] = useState(description)
     const [nuovaPriorita, setNuovaPriorita] = useState(priority)
     const [nuovaData, setNuovaData] = useState(dueDate)
+    const [nuovoOrario, setNuovoOrario] = useState(time || '')
 
     function handleEdit() {
         if (!nuovoTitolo.trim()) return
-        onEdit({ id, title: nuovoTitolo, description: nuovaDescrizione, priority: nuovaPriorita, dueDate: nuovaData})
+        onEdit({ id, title: nuovoTitolo, description: nuovaDescrizione, priority: nuovaPriorita, dueDate: nuovaData, time: nuovoOrario})
         setIsEditing(false)
     }
 
@@ -52,6 +53,12 @@ function TaskCard({ title, description, priority, dueDate, completed, onDelete, 
                                 onChange={e=> setNuovaData(e.target.value)}
                                 className='border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-2 py-1 text-sm flex-1 focus:outline-none'
                             />
+                            <input 
+                                type='time'
+                                value={nuovoOrario}
+                                onChange={e=> setNuovoOrario(e.target.value)}
+                                className='border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-2 py-1 text-sm flex-1 focus:outline-none'
+                            />
                         </div>
                     </div>
                 ):(
@@ -72,7 +79,7 @@ function TaskCard({ title, description, priority, dueDate, completed, onDelete, 
                     )}
                     <div className="flex items-center justify-between mt-1">
                         {dueDate && (
-                            <span className="text-xs text-gray-400">📅 {dueDate}</span>
+                            <span className="text-xs text-gray-400">📅 {dueDate} {time && `⏰ ${time}`}</span>
                         )}
                         <span className={`text-xs font-medium ${completed ? 'text-green-500' : 'text-yellow-500'}`}>
                             {completed ? `✅ ${t('tasks.completed')}` : `🕐 ${t('tasks.inProgress')}`}

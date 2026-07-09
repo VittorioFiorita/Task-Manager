@@ -40,7 +40,8 @@
     "priority": "Priorità",
     "dueDate": "Scadenza",
     "add": "Aggiungi Task",
-    "titleRequired": "Il titolo è obbligatorio"
+    "titleRequired": "Il titolo è obbligatorio",
+    "time": "Orario"
   },
   "settings": {
     "title": "Impostazioni",

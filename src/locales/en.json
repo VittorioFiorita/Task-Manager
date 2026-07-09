@@ -40,7 +40,8 @@
     "priority": "Priority",
     "dueDate": "Due date",
     "add": "Add Task",
-    "titleRequired": "Title is required"
+    "titleRequired": "Title is required",
+    "time": "Time"
   },
   "settings": {
     "title": "Settings",

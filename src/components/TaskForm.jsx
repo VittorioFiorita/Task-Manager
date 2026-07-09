@@ -8,6 +8,7 @@ function TaskForm({ onAddTask }) {
     description: '',
     priority: 'media',
     dueDate: '',
+    time: '',
   })
   const [errors, setErrors] = useState({})
 
@@ -33,7 +34,7 @@ function TaskForm({ onAddTask }) {
       id: Date.now(),
       completed: false,
     })
-    setFormData({ title: '', description: '', priority: 'media', dueDate: '' })
+    setFormData({ title: '', description: '', priority: 'media', dueDate: '', time: '' })
   }
 
   return (
