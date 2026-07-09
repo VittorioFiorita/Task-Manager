@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import useNotifications from '../hooks/useNotifications'
 
 function TaskModal({ task, onClose, onDelete, onToggle, onEdit }) {
     const { t } = useTranslation()
@@ -9,12 +10,19 @@ function TaskModal({ task, onClose, onDelete, onToggle, onEdit }) {
     const [nuovaPriorita, setNuovaPriorita] = useState(task?.priority || 'media')
     const [nuovaData, setNuovaData] = useState(task?.dueDate || '')
     const [nuovoOrario, setNuovoOrario] = useState(task?.time || '')
+    const { richiediPermesso, programmaNofifica } = useNotifications()
 
     if (!task) return null
 
-    function handleEdit() {
+    async function handleEdit() {
         if (!nuovoTitolo.trim()) return
         onEdit({ id: task.id, title: nuovoTitolo, description: nuovaDescrizione, priority: nuovaPriorita, dueDate: nuovaData, time: nuovoOrario })
+
+        if (nuovaData && nuovoOrario) {
+            const permesso = await richiediPermesso()
+            if (permesso) programmaNofifica(nuovoTitolo, nuovoOrario, nuovaData)
+        }
+    
         setIsEditing(false)
         onClose()
     }

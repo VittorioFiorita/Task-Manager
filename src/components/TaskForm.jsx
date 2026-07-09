@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import useNotifications from '../hooks/useNotifications'
 
 function TaskForm({ onAddTask }) {
+  const { richiediPermesso, programmaNofifica } = useNotifications()
   const { t } = useTranslation()
   const [formData, setFormData] = useState({
     title: '',
@@ -17,7 +19,7 @@ function TaskForm({ onAddTask }) {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     
     const nuoviErrori = {}
@@ -34,6 +36,12 @@ function TaskForm({ onAddTask }) {
       id: Date.now(),
       completed: false,
     })
+
+    if(formData.dueDate && formData.time) {
+      const permesso = await richiediPermesso()
+      if (permesso) programmaNofifica(formData.title, formData.time, formData.dueDate)
+    }
+  
     setFormData({ title: '', description: '', priority: 'media', dueDate: '', time: '' })
   }
 

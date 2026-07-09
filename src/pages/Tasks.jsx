@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addTask, deleteTask, toggleComplete, editTask } from '../store/tasksSlice'
 import { useTranslation } from 'react-i18next'
-import TaskList from '../components/TaskList'
+import TaskListGiorno from '../components/TaskListGiorno'
 import TaskForm from '../components/TaskForm'
 import useTaskFilter from '../hooks/useTaskFilter'
 
@@ -79,7 +79,7 @@ function Tasks() {
         ))}
       </div>
 
-      <TaskList
+      <TaskListGiorno
         tasks={taskFiltrate}
         onDelete={(id) => dispatch(deleteTask(id))}
         onToggle={(id) => dispatch(toggleComplete(id))}
