@@ -1,0 +1,60 @@
+{
+  "header": {
+    "home": "Home",
+    "tasks": "Task",
+    "settings": "Impostazioni"
+  },
+  "home": {
+    "title": "Dashboard",
+    "total": "Task totali",
+    "completed": "Task completate",
+    "inProgress": "Task in corso",
+    "chartStatus": "Stato task",
+    "chartPriority": "Task per priorità",
+    "noData": "Nessun dato",
+    "legendCompleted": "Completate",
+    "legendInProgress": "In corso"
+  },
+  "tasks": {
+    "title": "Tasks",
+    "search": "🔍 Cerca task...",
+    "all": "tutte",
+    "inProgress": "in corso",
+    "completed": "completate",
+    "high": "alta",
+    "medium": "media",
+    "low": "bassa",
+    "complete": "Completa",
+    "reopen": "Riapri",
+    "edit": "Modifica",
+    "save": "Salva",
+    "delete": "Elimina",
+    "details": "Dettagli"
+  },
+  "form": {
+    "newTask": "Nuova Task",
+    "title": "Titolo *",
+    "titlePlaceholder": "Es. Studiare React",
+    "description": "Descrizione",
+    "descriptionPlaceholder": "Aggiungi una descrizione...",
+    "priority": "Priorità",
+    "dueDate": "Scadenza",
+    "add": "Aggiungi Task",
+    "titleRequired": "Il titolo è obbligatorio"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "darkMode": "Tema scuro",
+    "darkModeDesc": "Passa alla modalità dark",
+    "language": "Lingua",
+    "languageDesc": "Seleziona la lingua"
+  },
+  "empty": {
+    "title": "Nessun task trovato",
+    "subtitle": "Crea il tuo primo task per iniziare!"
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "subtitle": "L'indirizzo cercato non esiste"
+  }
+}

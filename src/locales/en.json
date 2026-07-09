@@ -1,0 +1,60 @@
+{
+  "header": {
+    "home": "Home",
+    "tasks": "Tasks",
+    "settings": "Settings"
+  },
+  "home": {
+    "title": "Dashboard",
+    "total": "Total tasks",
+    "completed": "Completed tasks",
+    "inProgress": "In progress",
+    "chartStatus": "Task status",
+    "chartPriority": "Tasks by priority",
+    "noData": "No data",
+    "legendCompleted": "Completed",
+    "legendInProgress": "In progress"
+  },
+  "tasks": {
+    "title": "Tasks",
+    "search": "🔍 Search tasks...",
+    "all": "all",
+    "inProgress": "in progress",
+    "completed": "completed",
+    "high": "high",
+    "medium": "medium",
+    "low": "low",
+    "complete": "Complete",
+    "reopen": "Reopen",
+    "edit": "Edit",
+    "save": "Save",
+    "delete": "Delete",
+    "details": "Details"
+  },
+  "form": {
+    "newTask": "New Task",
+    "title": "Title *",
+    "titlePlaceholder": "E.g. Study React",
+    "description": "Description",
+    "descriptionPlaceholder": "Add a description...",
+    "priority": "Priority",
+    "dueDate": "Due date",
+    "add": "Add Task",
+    "titleRequired": "Title is required"
+  },
+  "settings": {
+    "title": "Settings",
+    "darkMode": "Dark mode",
+    "darkModeDesc": "Switch to dark mode",
+    "language": "Language",
+    "languageDesc": "Select language"
+  },
+  "empty": {
+    "title": "No tasks found",
+    "subtitle": "Create your first task to get started!"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "The address you looked for does not exist"
+  }
+}
