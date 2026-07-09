@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PriorityBadge from './PriorityBadge'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -11,6 +11,14 @@ function TaskCard({ title, description, priority, dueDate, time, completed, onDe
     const [nuovaPriorita, setNuovaPriorita] = useState(priority)
     const [nuovaData, setNuovaData] = useState(dueDate)
     const [nuovoOrario, setNuovoOrario] = useState(time || '')
+
+    useEffect(() => {
+        setNuovoTitolo(title)
+        setNuovaDescrizione(description)
+        setNuovaPriorita(priority)
+        setNuovaData(dueDate)
+        setNuovoOrario(time || '')
+    }, [title, description, priority, dueDate, time])
 
     function handleEdit() {
         if (!nuovoTitolo.trim()) return
