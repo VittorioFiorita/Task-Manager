@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import PriorityBadge from './priorityBadge'
+import PriorityBadge from './PriorityBadge'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
