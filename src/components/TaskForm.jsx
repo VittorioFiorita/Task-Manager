@@ -72,7 +72,7 @@ function TaskForm({ onAddTask }) {
         />
       </div>
 
-      <div className="flex gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="flex flex-col gap-1 flex-1">
           <label className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('form.priority')}</label>
           <select
@@ -96,6 +96,17 @@ function TaskForm({ onAddTask }) {
             onChange={handleChange}
             className="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
           />
+        </div>
+
+        <div className="flex flex-col gap-1 flex-1">
+          <label className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('form.time')}</label>
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+              className="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+            />
         </div>
       </div>
 
