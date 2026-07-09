@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import useNotifications from '../hooks/useNotifications'
 
@@ -12,6 +12,17 @@ function TaskModal({ task, onClose, onDelete, onToggle, onEdit }) {
     const [nuovoOrario, setNuovoOrario] = useState(task?.time || '')
     const { richiediPermesso, programmaNofifica } = useNotifications()
 
+    useEffect(() => {
+        if (task) {
+            setNuovoTitolo(task.title || '')
+            setNuovaDescrizione(task.description || '')
+            setNuovaPriorita(task.priority || 'media')
+            setNuovaData(task.dueDate || '')
+            setNuovoOrario(task.time || '')
+            setIsEditing(false)
+        }
+    }, [task])
+
     if (!task) return null
 
     async function handleEdit() {
@@ -22,7 +33,7 @@ function TaskModal({ task, onClose, onDelete, onToggle, onEdit }) {
             const permesso = await richiediPermesso()
             if (permesso) programmaNofifica(nuovoTitolo, nuovoOrario, nuovaData)
         }
-    
+
         setIsEditing(false)
         onClose()
     }
