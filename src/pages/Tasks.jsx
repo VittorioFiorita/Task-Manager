@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import TaskListGiorno from '../components/TaskListGiorno'
 import TaskForm from '../components/TaskForm'
 import useTaskFilter from '../hooks/useTaskFilter'
+import { Link } from 'react-router-dom'
 
 function Tasks() {
   const tasks = useSelector(state => state.tasks)
@@ -23,7 +24,6 @@ function Tasks() {
   const filtriStato = [
     { label: t('tasks.all'), value: 'tutte' },
     { label: t('tasks.inProgress'), value: 'in corso' },
-    { label: t('tasks.completed'), value: 'completate' },
   ]
 
   const filtriPriorita = [
@@ -35,7 +35,12 @@ function Tasks() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{t('tasks.title')}</h1>
+      <div>
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{t('tasks.title')}</h1>
+        <Link to='/archieve' className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400">
+          {t('tasks.archieve')}
+        </Link>
+      </div>
 
       <TaskForm onAddTask={(task) => dispatch(addTask(task))} />
 

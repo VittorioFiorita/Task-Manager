@@ -24,6 +24,7 @@
     "high": "high",
     "medium": "medium",
     "low": "low",
+    "archieve": "📦 Archive",
     "complete": "Complete",
     "reopen": "Reopen",
     "edit": "Edit",
@@ -57,5 +58,10 @@
   "notFound": {
     "title": "Page not found",
     "subtitle": "The address you looked for does not exist"
+  },
+  "archive": {
+  "title": "Archive",
+  "back": "← Back to tasks"
   }
+
 }

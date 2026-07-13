@@ -5,6 +5,7 @@ import Tasks from './pages/Tasks'
 import TaskDetail from "./pages/TaskDetail"
 import Settings from './pages/Settings'
 import NotFound from './pages/NotFound'
+import Archive from "./pages/Archieve"
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <main className="max-w-4xl mx-auto px-6 py-8">
           <Routes>
             <Route path="/" element={<Home />}/>
+            <Route path="/archieve" element={<Archive />}/>
             <Route path="/tasks" element={<Tasks />}/>
             <Route path="/tasks/:id" element={<TaskDetail />}/>
             <Route path="/settings" element={<Settings />}/>

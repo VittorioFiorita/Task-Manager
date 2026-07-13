@@ -1,7 +1,7 @@
 function useTaskFilter(tasks, filtroStato, filtroPriorita, ricerca) {
   return tasks
+    .filter(t=> !t.completed)
     .filter(t => {
-      if (filtroStato === 'completate') return t.completed
       if (filtroStato === 'in corso') return !t.completed
       return true
     })
